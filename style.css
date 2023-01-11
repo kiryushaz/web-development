@@ -1,0 +1,166 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: sans-serif;
+    font-size: 1.2em;
+    max-width: 1600px;
+    margin: auto;
+}
+
+header, footer {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    box-sizing: border-box;
+    justify-content: space-between;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    margin-bottom: 25px;
+}
+
+p,li {
+    margin-bottom: 10px;
+}
+
+a {
+    color: blueviolet;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a:focus {
+    color: blue;
+    text-decoration: underline;
+}
+
+.error_msg {
+    color: red;
+}
+
+header {
+    padding: 5px 15px;
+    background-color: rgb(180, 255, 249);
+}
+
+main {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 20px 35px;
+    box-sizing: border-box;
+}
+
+ul {
+    list-style-type: none;
+}
+
+nav > ul {
+    font-size: 18px;
+    margin: 0;
+    padding: 0;
+}
+
+nav > ul > li {
+    margin-right: 25px;
+    display: inline;
+}
+
+.nav_item {
+    color: black;
+    text-decoration: none;
+}
+
+.nav_item:visited {
+    color: black;
+}
+
+.nav_item:hover {
+    color: brown;
+}
+
+.nav_item:focus {
+    color: red;
+}
+
+.img_logo {
+    margin-left: 25px;
+    width: 80px;
+    height: 80px;
+}
+
+.img_row {
+    margin: auto 0;
+    margin-left: 50px;
+    padding: 10px;
+}
+
+.content {
+    margin-top: 50px;
+}
+
+.search_field {
+    margin-top: 25px;
+    align-items: center;
+}
+
+.search_field input[type="search"] {
+    width: 40%;
+    padding: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.search_field button[type="submit"] {
+    border-color: green;
+    background-color: greenyellow;
+    padding: 10px;
+    font-size: 14px;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    border: 1px solid blueviolet;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+.row:last-child {
+    margin-bottom: 0px;
+}
+
+.cat_name {
+    font-size: 0.9em;
+    margin-bottom: 16px;
+}
+
+.desc_row {
+    margin-left: 50px;
+    padding: 20px;
+}
+
+.desc_row > .org_name {
+    font-size: 1.5em;
+}
+
+.company {
+    display: flex;
+    justify-content: space-between;
+}
+
+.company_logo img{
+    width: 300px;
+    margin-left: 50px;
+}
