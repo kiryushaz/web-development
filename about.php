@@ -6,6 +6,4 @@ require_once("header.php");
 <p>Сайт: справочник предприятий и организации</p>
 <p>Разработчик: Зыков Кирилл, группа МО-201</p>
 <p><a href="mailto:kiryushaz.gaming@gmail.com">Написать письмо</a></p>
-<?php
-require_once("footer.php");
-?>
+<?php require_once("footer.php"); ?>

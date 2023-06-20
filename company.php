@@ -1,17 +1,18 @@
 <?php
-define("DATABASE", "test");
+require_once("utils/common.php");
+require_once("utils/db.php");
 
-$mysqli = new mysqli("localhost", "root", "", DATABASE);
+$_GET['id'] = intval(preg_replace("/[^0-9]/", "", $_GET['id']));
 
-if ($mysqli->connect_error) {
-    exit('Error ' . $mysqli->connect_errno . ': ' . $mysqli->connect_error);
+$stmt = $mysqli->prepare("SELECT * FROM organizations WHERE id = ?");
+$stmt->bind_param('i', $_GET['id']);
+$stmt->execute();
+
+$result = $stmt->get_result();
+
+if ($result->num_rows == 0) {
+    header("Location: errors/404.php", true);
 }
-if (!$mysqli->select_db(DATABASE)) {
-    exit('Cannot select database');
-}
-
-$sql = "SELECT * FROM Organizations WHERE `id` = " . $_GET['id'];
-$result = $mysqli->query($sql);
 
 $items = $result->fetch_assoc();
 
@@ -32,11 +33,18 @@ require_once("header.php");
             }
         ?> -->
         <br><a href="search.php">&lt;&lt; Вернуться назад</a>
+        <?php if(isset($_SESSION['logged'])) { 
+            echo '<br><br><a href="search.php">Оставить отзыв</a>'; 
+            if (is_admin($_SESSION['logged'])) {
+                echo '<br><br><a href="cpanel.php?type=editCompany">Редактировать</a>'; 
+            }
+        } ?>
     </div>
     <div class="company_logo">
         <img src="./images/<?= $items['img_path']?>" alt="img">
     </div>
 </div>
-<?php
-require_once("footer.php");
-?>
+
+<div id="map_canvas"></div>
+<!-- <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script> -->
+<?php require_once("footer.php"); ?>
